@@ -1,8 +1,16 @@
+$clr-neutral-100: #f8f7f7
+$clr-neutral-900: #201e1f
+$clr-primary-400: #da3f0b
+$box-shadow: 0 0 10px -2px
+$border-rad: 10px
+  
 *
   box-sizing: border-box
   margin: 0
 
 body
+  background: $clr-neutral-100
+  color: $clr-neutral-900
   font-size: 1.75rem
   font-family: system-ui, sans-serif
   line-height: 1.6
@@ -17,11 +25,33 @@ body
   gap: 0.75em
   width: min(90%, 60rem)
   padding: 2em
+  box-shadow: $box-shadow $clr-neutral-900, $box-shadow $clr-neutral-900
+  border-radius: $border-rad
+
+  & h2
+    color: $clr-primary-400
 
 .btn
   display: inline-block
   padding: 0.5em 1.5em
   text-decoration: none
+  border:
+    width: 1px
+    style: solid
+    color: $clr-primary-400
+    radius: $border-rad
+  
+  &--primary
+    background: $clr-primary-400
+    color: $clr-neutral-100
+  
+  &--outline
+    background: $clr-neutral-100
+    color: $clr-primary-400
+
+  &:hover, &:focus
+    background: $clr-neutral-900
+    box-shadow: $box-shadow $clr-primary-400, $box-shadow $clr-primary-400
 
 .flex-group
   display: flex
